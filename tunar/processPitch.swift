@@ -5,38 +5,30 @@
 //  Created by Sonny Young on 8/14/23.
 //
 
+let A440: Float = 440
+let A440MIDINOTE: Float = 69
+
 import Foundation
 
-func frequencyToPitch(frequency: Float) -> String? {
-    if let midiNote = frequencyToMidiNote(frequency: frequency) {
-        let pitch = midiNoteToPitch(midiNote: midiNote)
-        return pitch
-    } else {
-        return nil
-    }
-}
-
-func frequencyToMidiNote(frequency: Float) -> Int? {
-    let a440Frequency: Float = 440.0
-    let a440MidiNote: Int = 69
-//    let centsPerOctave: Float = 1200.0
-    let real_frequency = frequency * 2
+func frequencyToNote(frequency: Float, offset: Float) -> (Float, Int, String, Float)? {
+    let a440Frequency: Float = A440 + offset
     
-    guard real_frequency > 0 else {
+    guard frequency > 0 else {
         return nil
     }
     
-    let midiNote = Int(round(12.0 * log2f(real_frequency / a440Frequency) + Float(a440MidiNote)))
-    print(midiNote)
-    return midiNote
-}
-
-func midiNoteToPitch(midiNote: Int) -> String {
+    let calcMidi = round(12 * log2f(frequency / a440Frequency) + Float(A440MIDINOTE))
+    let exp: Float = (calcMidi - A440MIDINOTE) / 12
+    let midiNoteFrequency: Float = pow(2, exp) * a440Frequency
+    let cents: Float = 1200 * log2f(frequency / midiNoteFrequency)
+    
+    let midiNote = Int(calcMidi)
     let octave = midiNote / 12 - 1
     let pitchClass = midiNote % 12
-    
     let pitchClassNames = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
-    let pitchName = pitchClassNames[pitchClass] + String(octave)
+    let pitchName: String = pitchClassNames[pitchClass] + String(octave)
     
-    return pitchName
+    print("frequency: \(frequency), midiNote: \(midiNote), pitchName: \(pitchName), cents: \(cents)")
+    
+    return (frequency, midiNote, pitchName, cents)
 }

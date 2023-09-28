@@ -14,6 +14,10 @@
 		3E4B67A82A8B29DD002192A4 /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B67A72A8B29DD002192A4 /* AudioEngine.swift */; };
 		3E4B67AA2A8B31DF002192A4 /* FFT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B67A92A8B31DF002192A4 /* FFT.swift */; };
 		3E4B67AE2A8B42CE002192A4 /* processPitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B67AD2A8B42CE002192A4 /* processPitch.swift */; };
+		3E6E54FF2A953081000AEAB1 /* pitchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6E54FE2A953081000AEAB1 /* pitchManager.swift */; };
+		3E8E4F152AC54780001E4540 /* metronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8E4F142AC54780001E4540 /* metronome.swift */; };
+		3E8E4F202AC54906001E4540 /* metronome_2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3E8E4F1E2AC54906001E4540 /* metronome_2.wav */; };
+		3E8E4F212AC54906001E4540 /* metronome_1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3E8E4F1F2AC54906001E4540 /* metronome_1.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,10 @@
 		3E4B67A72A8B29DD002192A4 /* AudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
 		3E4B67A92A8B31DF002192A4 /* FFT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FFT.swift; sourceTree = "<group>"; };
 		3E4B67AD2A8B42CE002192A4 /* processPitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = processPitch.swift; sourceTree = "<group>"; };
+		3E6E54FE2A953081000AEAB1 /* pitchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pitchManager.swift; sourceTree = "<group>"; };
+		3E8E4F142AC54780001E4540 /* metronome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = metronome.swift; sourceTree = "<group>"; };
+		3E8E4F1E2AC54906001E4540 /* metronome_2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronome_2.wav; sourceTree = "<group>"; };
+		3E8E4F1F2AC54906001E4540 /* metronome_1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = metronome_1.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +49,6 @@
 		3E4B678D2A8B26FC002192A4 = {
 			isa = PBXGroup;
 			children = (
-				3E4B67A92A8B31DF002192A4 /* FFT.swift */,
 				3E4B67982A8B26FC002192A4 /* tunar */,
 				3E4B67972A8B26FC002192A4 /* Products */,
 			);
@@ -58,10 +65,15 @@
 		3E4B67982A8B26FC002192A4 /* tunar */ = {
 			isa = PBXGroup;
 			children = (
+				3E8E4F1F2AC54906001E4540 /* metronome_1.wav */,
+				3E8E4F1E2AC54906001E4540 /* metronome_2.wav */,
+				3E4B67A92A8B31DF002192A4 /* FFT.swift */,
+				3E6E54FE2A953081000AEAB1 /* pitchManager.swift */,
 				3E4B67992A8B26FC002192A4 /* tunarApp.swift */,
 				3E4B67AD2A8B42CE002192A4 /* processPitch.swift */,
 				3E4B67A72A8B29DD002192A4 /* AudioEngine.swift */,
 				3E4B679B2A8B26FC002192A4 /* ContentView.swift */,
+				3E8E4F142AC54780001E4540 /* metronome.swift */,
 				3E4B679D2A8B26FD002192A4 /* Assets.xcassets */,
 				3E4B679F2A8B26FD002192A4 /* Preview Content */,
 			);
@@ -134,6 +146,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E8E4F202AC54906001E4540 /* metronome_2.wav in Resources */,
+				3E8E4F212AC54906001E4540 /* metronome_1.wav in Resources */,
 				3E4B67A12A8B26FD002192A4 /* Preview Assets.xcassets in Resources */,
 				3E4B679E2A8B26FD002192A4 /* Assets.xcassets in Resources */,
 			);
@@ -148,8 +162,10 @@
 			files = (
 				3E4B67AE2A8B42CE002192A4 /* processPitch.swift in Sources */,
 				3E4B67AA2A8B31DF002192A4 /* FFT.swift in Sources */,
+				3E8E4F152AC54780001E4540 /* metronome.swift in Sources */,
 				3E4B67A82A8B29DD002192A4 /* AudioEngine.swift in Sources */,
 				3E4B679C2A8B26FC002192A4 /* ContentView.swift in Sources */,
+				3E6E54FF2A953081000AEAB1 /* pitchManager.swift in Sources */,
 				3E4B679A2A8B26FC002192A4 /* tunarApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +295,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"tunar/Preview Content\"";
+				DEVELOPMENT_TEAM = N7ZH9H89BH;
+				"DEVELOPMENT_TEAM[sdk=*]" = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -307,6 +325,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"tunar/Preview Content\"";
+				DEVELOPMENT_TEAM = N7ZH9H89BH;
+				"DEVELOPMENT_TEAM[sdk=*]" = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

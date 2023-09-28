@@ -10,9 +10,12 @@ import AVFoundation
 
 @main
 struct tunarApp: App {
+
+    let pitchManager = PitchManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(audioEngine: AudioEngine(pitchManager: pitchManager)).environmentObject(pitchManager)
         }
     }
 }
